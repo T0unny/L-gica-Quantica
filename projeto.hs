@@ -30,7 +30,7 @@ not2 :: Bit -> Bit
 not2 True = False
 not2 False = True
 
-testBialgebra :: (Bit, Bit) -> Bit
+testBialgebra :: (Bit, Bit) -> Bool
 testBialgebra (a, b) = leftSide == rightSide
   where
 
@@ -64,13 +64,6 @@ bits = [False, True]
 
 pairs :: [(Bit,Bit)]
 pairs = [(a,b) | a <- bits, b <- bits]
-
-indexBool :: Bit -> Int
-indexBool False = 0
-indexBool True  = 1
-
-indexPair :: (Bit,Bit) -> Int
-indexPair (a,b) = 2 * indexBool a + indexBool b
 
 toMatrix :: (Eq b) => [a] -> [b] -> (a -> b) -> Matrix
 toMatrix inputs outputs f = [ [ if f x == y then 1 else 0 | x <- inputs ] | y <- outputs]
