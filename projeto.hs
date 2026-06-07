@@ -55,8 +55,6 @@ testcopyxor :: Bit -> Bit
 testcopyxor b = xor (copy1 b) == falsum (delete b)
 
 
-
-
 type Matrix = [[Complex Double]]
 
 bits :: [Bit]
