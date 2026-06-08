@@ -1,3 +1,7 @@
+--Pedro Ribeiro, pg60421
+--Pedro Silva, pg60422
+
+
 import Data.Complex
 type Bit = Bool
 
@@ -62,6 +66,18 @@ bits = [False, True]
 
 pairs :: [(Bit,Bit)]
 pairs = [(a,b) | a <- bits, b <- bits]
+
+
+
+stateFalse :: Matrix
+stateFalse = [[1.0 :+ 0.0],
+              [0.0 :+ 0.0]]
+
+
+stateTrue :: Matrix
+stateTrue = [[0.0 :+ 0.0],
+             [1.0 :+ 0.0]]
+
 
 toMatrix :: (Eq b) => [a] -> [b] -> (a -> b) -> Matrix
 toMatrix inputs outputs f = [ [ if f x == y then 1 else 0 | x <- inputs ] | y <- outputs]
